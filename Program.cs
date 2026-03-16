@@ -1,6 +1,6 @@
 ﻿using apbd_cw1_git_s32797;
 
-Console.WriteLine("Podaj liczby oddzielone spacjami, aby obliczyć średnią:");
+Console.WriteLine("Podaj liczby oddzielone spacjami, aby obliczyć średnią (np 2 4 6):");
 string input = Console.ReadLine() ?? "";
 
 string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
