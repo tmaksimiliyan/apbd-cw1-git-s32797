@@ -5,11 +5,21 @@ string input = Console.ReadLine() ?? "";
 
 string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 double[] numbers = new  double[parts.Length];
+bool valid = true;
 
 for (int i = 0; i < parts.Length; i++)
 {
+    if (!double.TryParse(parts[i], out numbers[i]))
+    {
+        valid = false;
+        break;
+    }
     numbers[i] = double.Parse(parts[i]);
 }
 
-double average = StatisticsHelper.CalculateAverage(numbers);
-Console.WriteLine($"Średnia: {average}");
+if (valid)
+{
+    double average = StatisticsHelper.CalculateAverage(numbers);
+    Console.WriteLine($"Średnia: {average}");
+}
+
