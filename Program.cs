@@ -14,12 +14,19 @@ for (int i = 0; i < parts.Length; i++)
         valid = false;
         break;
     }
-    numbers[i] = double.Parse(parts[i]);
 }
 
-if (valid)
+if (parts.Length == 0)
+{
+    Console.WriteLine("Błąd: nie podano żadnych liczb");
+}else if (valid)
 {
     double average = StatisticsHelper.CalculateAverage(numbers);
     Console.WriteLine($"Średnia: {average}");
 }
+else
+{
+    Console.WriteLine("Błąd: podano niepoprawne dane");
+}
+
 
